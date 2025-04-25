@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellofx.HomePageController">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefWidth="180" spacing="15" style="-fx-background-color: #2c3e50;">
+            <padding>
+                <Insets bottom="20" left="20" right="10" top="20" />
+            </padding>
+            <Label style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" text="SPENT WISE" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Dashboard" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Budget" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Insights" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Upcoming Payments and Reminders" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Child Account" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white;" text="Settings" />
+        </VBox>
+    </left>
+
+    <!-- Main content -->
+    <center>
+        <VBox spacing="30" style="-fx-background-color: #ecf0f1;">
+            <padding>
+                <Insets bottom="30" left="30" right="30" top="30" />
+            </padding>
+
+            <!-- Greeting -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Hello, Nizaq" />
+
+            <!-- Account Balances Section -->
+            <HBox spacing="20">
+                <VBox prefWidth="200" spacing="8" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Westpec" />
+                    <Label style="-fx-text-fill: gray;" text="Total Balance" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="1,250.00" />
+                </VBox>
+
+                <VBox prefWidth="200" spacing="8" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Money Bank" />
+                    <Label style="-fx-text-fill: gray;" text="Total Balance" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="5,000.00" />
+                </VBox>
+   
+                <Button ellipsisString="+" style="-fx-font-size: 24px; -fx-pref-width: 40px; -fx-pref-height: 40px; -fx-background-radius: 20; -fx-background-color: #27ae60; -fx-text-fill: white;" text="+">
+               <HBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </HBox.margin>
+            </Button>
+            </HBox>
+
+            <!-- Recent Transactions -->
+            <VBox spacing="10">
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Recent Transactions" />
+
+                <TableView fx:id="transactionsTable" prefHeight="250" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white;">
+                    <columns>
+                        <TableColumn prefWidth="120" text="Date" />
+                        <TableColumn prefWidth="180" text="Description" />
+                        <TableColumn prefWidth="120" text="Category" />
+                        <TableColumn prefWidth="120" text="Amount" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>
